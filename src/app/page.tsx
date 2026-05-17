@@ -1,18 +1,18 @@
 export default function LuxuryPlaylistLinksWithBackground() {
   return (
-    // Outer container with the background image
+    // 1. Updated Background Container: Blends with white, contains on mobile, covers on PC
     <div
-      className="flex flex-col items-center justify-center min-h-screen p-6 font-sans bg-cover bg-center bg-no-repeat"
+      className="flex flex-col items-center justify-center min-h-screen p-6 font-sans bg-white bg-[length:100%_auto] md:bg-cover bg-top md:bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/images/back.jpeg')" }} 
     >
       
-      
       {/* BRAND LOGO - Positioned Top Center */}
       <img 
-        src="/images/logo.jpeg" 
+        src="/images/logo.jpeg"  /* CHECK YOUR FOLDER: Make sure it's exactly logo.jpeg, not Logo.jpeg or logo.JPG */
         alt="The Breakup Re//Set" 
         className="w-full max-w-[280px] sm:max-w-sm mb-10 object-contain mix-blend-multiply"
       />
+
       {/* The Translucent Card */}
       <div className="bg-white/70 backdrop-blur-2xl border border-[#F2EDE4] shadow-[0_20px_50px_-12px_rgba(197,160,89,0.1)] rounded-2xl p-10 w-full max-w-sm flex flex-col items-center relative overflow-hidden">
         
@@ -39,7 +39,7 @@ export default function LuxuryPlaylistLinksWithBackground() {
             href="/folder"
             className="block w-full py-4 text-center bg-gradient-to-r from-[#D4B271] via-[#C5A059] to-[#AF8C4F] text-white rounded-none border border-[#AF8C4F] font-light uppercase tracking-wider text-sm transition-all duration-300 hover:opacity-90 hover:shadow-[0_10px_20px_rgba(197,160,89,0.2)]"
           >
-            LISTEN ON OUR FOLDER
+            Guided Reset Audios
           </a>
 
           {/* Spotify Link */}
@@ -47,7 +47,7 @@ export default function LuxuryPlaylistLinksWithBackground() {
             href="https://open.spotify.com/user/31ypzsn4oehgxzrkacwcexxbsrhm?si=vyUoDa7bRC6FzJcTEKQ0oQ" 
             className="block w-full py-4 text-center bg-white text-[#AF8C4F] rounded-none border border-[#DCCAAD] font-light uppercase tracking-wider text-sm transition-all duration-300 hover:bg-[#FCFBF9] hover:border-[#AF8C4F]"
           >
-            LISTEN ON SPOTIFY
+            Spotify Reset Playlist
           </a>
         </div>
 
