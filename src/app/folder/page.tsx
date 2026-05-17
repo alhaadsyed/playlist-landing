@@ -4,10 +4,8 @@ import { useRef } from "react";
 
 export default function FolderPage() {
   const audioRefs = useRef<(HTMLAudioElement | null)[]>([]);
-  // 1. We create a reference to the scrollable container
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
-  // Function to pause all tracks except the one currently selected
   const handlePlay = (currentIndex: number) => {
     audioRefs.current.forEach((audio, index) => {
       if (audio && index !== currentIndex) {
@@ -16,10 +14,9 @@ export default function FolderPage() {
     });
   };
 
-  // 2. We create a function to scroll left and right when the arrows are clicked
   const scroll = (direction: "left" | "right") => {
     if (scrollContainerRef.current) {
-      const scrollAmount = 350; // Distance to scroll per click
+      const scrollAmount = 350;
       scrollContainerRef.current.scrollBy({
         left: direction === "left" ? -scrollAmount : scrollAmount,
         behavior: "smooth",
@@ -28,8 +25,9 @@ export default function FolderPage() {
   };
 
   return (
+    // 1. Updated Container: Matches the home page gradient, spacing, and mobile-friendly background scaling
     <div
-      className="flex flex-col items-center min-h-screen p-6 font-sans bg-cover bg-center bg-no-repeat bg-fixed overflow-hidden"
+      className="flex flex-col items-center justify-between min-h-screen p-6 font-sans bg-gradient-to-b from-white via-white to-[#F9F6F0] bg-[length:100%_auto] md:bg-cover bg-top md:bg-center bg-no-repeat overflow-hidden"
       style={{ backgroundImage: "url('/images/back.jpeg')" }}
     >
       {/* Hide Webkit Scrollbar globally for this page */}
@@ -39,17 +37,19 @@ export default function FolderPage() {
         }
       `}</style>
 
-      {/* Top Logo */}
-      <img 
-        src="/images/logo.jpeg" 
-        alt="The Breakup Re//Set" 
-        className="w-full max-w-[200px] mt-8 mb-6 object-contain mix-blend-multiply"
-      />
+      {/* TOP: BRAND LOGO */}
+      <div className="pt-4 w-full flex justify-center">
+        <img 
+          src="/images/logo.jpeg" 
+          alt="The Breakup Re//Set" 
+          className="w-full max-w-[200px] object-contain mix-blend-multiply"
+        />
+      </div>
 
-      {/* The Translucent Playlist Card */}
-      <div className="bg-white/70 backdrop-blur-2xl border border-[#F2EDE4] shadow-[0_20px_50px_-12px_rgba(197,160,89,0.1)] rounded-3xl p-8 w-full max-w-xl flex flex-col relative">
+      {/* MIDDLE: The Translucent Playlist Card (Added 'my-auto' to center it in the available space) */}
+      <div className="bg-white/70 backdrop-blur-2xl border border-[#F2EDE4] shadow-[0_20px_50px_-12px_rgba(197,160,89,0.1)] rounded-3xl p-8 w-full max-w-xl flex flex-col relative my-auto">
         
-        {/* HEADER SECTION - Completely Locked in Place */}
+        {/* HEADER SECTION */}
         <div className="flex flex-col shrink-0 border-b border-[#DCCAAD] pb-6 mb-4">
           <Link href="/" className="text-[#AF8C4F] text-xs tracking-widest uppercase mb-4 hover:opacity-70 transition flex items-center">
             ← Back to Home
@@ -59,7 +59,7 @@ export default function FolderPage() {
           </h1>
         </div>
 
-        {/* Swipe Indicator (Changes text dynamically based on screen size) */}
+        {/* Swipe Indicator */}
         <p className="text-center text-[10px] uppercase tracking-widest text-gray-400 mb-4">
           <span className="md:hidden">← Swipe to browse tracks →</span>
           <span className="hidden md:inline">Hover & use arrows to browse tracks</span>
@@ -83,7 +83,6 @@ export default function FolderPage() {
             className="flex overflow-x-auto snap-x snap-mandatory gap-4 pb-4 px-2"
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
-            
             {/* Track 1 */}
             <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">1. Letting go...</h2>
@@ -177,6 +176,14 @@ export default function FolderPage() {
 
         </div>
       </div>
+
+      {/* BOTTOM: Elegant Footer Quote to anchor the screen */}
+      <div className="w-full text-center pb-2">
+        <p className="text-[9px] uppercase tracking-[0.2em] text-[#AF8C4F] opacity-80 font-medium">
+          Take a deep breath. You are exactly where you need to be.
+        </p>
+      </div>
+      
     </div>
   );
 }
