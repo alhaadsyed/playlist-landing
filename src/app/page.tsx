@@ -1,25 +1,17 @@
 export default function LuxuryPlaylistLinksWithBackground() {
   return (
-    <div
-      // FIX 1: Changed "p-6" to "px-6 pb-6 pt-2" to pull the whole page up slightly
-      className="flex flex-col items-center justify-between min-h-screen px-6 pb-6 pt-2 font-sans bg-gradient-to-b from-white via-white to-[#F9F6F0] bg-[length:100%_auto] md:bg-cover bg-top md:bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/back.jpeg')" }} 
-    >
+    // Clean, premium off-white background. NO image.
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 font-sans bg-[#FCFBF9]">
       
-      {/* TOP: BRAND LOGO */}
-      {/* FIX 2: Removed top padding here to let the logo sit at the very top */}
-      <div className="w-full flex justify-center">
-        <img 
-          src="/images/logo.jpeg" 
-          alt="The Breakup Re//Set" 
-          // FIX 3: Made max-w-[220px] on mobile so it fits the wreath, normal size on desktop
-          className="w-full max-w-[220px] md:max-w-[280px] object-contain mix-blend-multiply"
-        />
-      </div>
+      {/* BRAND LOGO */}
+      <img 
+        src="/images/logo.jpeg" 
+        alt="The Breakup Re//Set" 
+        className="w-full max-w-[240px] md:max-w-[280px] mb-10 object-contain mix-blend-multiply shrink-0"
+      />
 
-      {/* MIDDLE: The Translucent Card */}
-      {/* Added mt-8 to keep the card nicely separated from the logo */}
-      <div className="bg-white/80 backdrop-blur-2xl border border-[#F2EDE4] shadow-[0_20px_50px_-12px_rgba(197,160,89,0.1)] rounded-2xl p-10 w-full max-w-sm flex flex-col items-center relative overflow-hidden my-auto mt-8">
+      {/* The Card (Crisp solid white for beautiful contrast) */}
+      <div className="bg-white border border-[#F2EDE4] shadow-[0_20px_50px_-12px_rgba(197,160,89,0.15)] rounded-2xl p-10 w-full max-w-sm flex flex-col items-center relative overflow-hidden mb-10">
         
         {/* Faint decorative top border accent line */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent opacity-50"></div>
@@ -63,7 +55,7 @@ export default function LuxuryPlaylistLinksWithBackground() {
       </div>
 
       {/* BOTTOM: Elegant Footer Quote */}
-      <div className="w-full text-center pb-2">
+      <div className="w-full text-center pb-2 mt-auto">
         <p className="text-[9px] uppercase tracking-[0.2em] text-[#AF8C4F] opacity-80 font-medium">
           Take a deep breath. You are exactly where you need to be.
         </p>

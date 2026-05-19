@@ -25,11 +25,8 @@ export default function FolderPage() {
   };
 
   return (
-    // FIX 1: Matched the exact padding from the home page (px-6 pb-6 pt-2) to slide the logo up
-    <div
-      className="flex flex-col items-center justify-start md:justify-center min-h-screen px-6 pb-6 pt-2 font-sans bg-white bg-[length:100%_auto] md:bg-cover bg-top md:bg-center bg-no-repeat overflow-hidden"
-      style={{ backgroundImage: "url('/images/back.jpeg')" }}
-    >
+    // Clean, premium off-white background. NO image.
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 font-sans bg-[#FCFBF9]">
       {/* Hide Webkit Scrollbar globally for this page */}
       <style jsx global>{`
         ::-webkit-scrollbar {
@@ -38,15 +35,14 @@ export default function FolderPage() {
       `}</style>
 
       {/* TOP: BRAND LOGO */}
-      {/* FIX 2: Shrunk the logo to max-w-[220px] on mobile so it fits perfectly inside the golden wreath */}
       <img 
         src="/images/logo.jpeg" 
         alt="The Breakup Re//Set" 
-        className="w-full max-w-[220px] md:max-w-[280px] mb-10 object-contain mix-blend-multiply shrink-0"
+        className="w-full max-w-[240px] md:max-w-[280px] mb-8 object-contain mix-blend-multiply shrink-0"
       />
 
-      {/* MIDDLE: The Translucent Playlist Card */}
-      <div className="bg-white/70 backdrop-blur-2xl border border-[#F2EDE4] shadow-[0_20px_50px_-12px_rgba(197,160,89,0.1)] rounded-2xl p-8 w-full max-w-xl flex flex-col items-center relative overflow-hidden mb-10">
+      {/* MIDDLE: The Playlist Card (Crisp solid white) */}
+      <div className="bg-white border border-[#F2EDE4] shadow-[0_20px_50px_-12px_rgba(197,160,89,0.15)] rounded-2xl p-8 w-full max-w-xl flex flex-col items-center relative overflow-hidden mb-8">
         
         {/* Faint decorative top border accent line */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent opacity-50"></div>
@@ -85,7 +81,7 @@ export default function FolderPage() {
           {/* Left Desktop Arrow */}
           <button 
             onClick={() => scroll("left")} 
-            className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-md border border-[#F2EDE4] rounded-full items-center justify-center text-[#AF8C4F] shadow-lg z-10 hover:bg-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
+            className="hidden md:flex absolute -left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 border border-[#F2EDE4] rounded-full items-center justify-center text-[#AF8C4F] shadow-lg z-10 hover:bg-[#FCFBF9] transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
             aria-label="Scroll Left"
           >
             ←
@@ -98,7 +94,7 @@ export default function FolderPage() {
             style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
           >
             {/* Track 1 */}
-            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-[#FCFBF9] border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">1. Letting go...</h2>
               <audio controls className="w-full h-10 rounded-md outline-none" ref={(el) => { audioRefs.current[0] = el; }} onPlay={() => handlePlay(0)}>
                 <source src="/songs/letting-go.mp3" type="audio/mpeg" />
@@ -106,7 +102,7 @@ export default function FolderPage() {
             </div>
 
             {/* Track 2 */}
-            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-[#FCFBF9] border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">2. Loneliness can feel so loud sometimes</h2>
               <audio controls className="w-full h-10 rounded-md outline-none" ref={(el) => { audioRefs.current[1] = el; }} onPlay={() => handlePlay(1)}>
                 <source src="/songs/loneliness-can-feel-so-loud-sometimes.mp3" type="audio/mpeg" />
@@ -114,7 +110,7 @@ export default function FolderPage() {
             </div>
 
             {/* Track 3 */}
-            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-[#FCFBF9] border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">3. Missing them hurts sometimes, doesn&apos;t it</h2>
               <audio controls className="w-full h-10 rounded-md outline-none" ref={(el) => { audioRefs.current[2] = el; }} onPlay={() => handlePlay(2)}>
                 <source src="/songs/missing-them-hurts-sometimes-doesnt-it.mp3" type="audio/mpeg" />
@@ -122,7 +118,7 @@ export default function FolderPage() {
             </div>
 
             {/* Track 4 */}
-            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-[#FCFBF9] border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">4. Nights feel heavier, don&apos;t they</h2>
               <audio controls className="w-full h-10 rounded-md outline-none" ref={(el) => { audioRefs.current[3] = el; }} onPlay={() => handlePlay(3)}>
                 <source src="/songs/nights-feel-heavier-dont-they.mp3" type="audio/mpeg" />
@@ -130,7 +126,7 @@ export default function FolderPage() {
             </div>
 
             {/* Track 5 */}
-            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-[#FCFBF9] border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">5. Sometimes heartbreak</h2>
               <audio controls className="w-full h-10 rounded-md outline-none" ref={(el) => { audioRefs.current[4] = el; }} onPlay={() => handlePlay(4)}>
                 <source src="/songs/sometimes-heartbreak.mp3" type="audio/mpeg" />
@@ -138,7 +134,7 @@ export default function FolderPage() {
             </div>
 
             {/* Track 6 */}
-            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-[#FCFBF9] border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">6. So...When you feel like going back</h2>
               <audio controls className="w-full h-10 rounded-md outline-none" ref={(el) => { audioRefs.current[5] = el; }} onPlay={() => handlePlay(5)}>
                 <source src="/songs/so-when-you-feel-like-going-back.mp3" type="audio/mpeg" />
@@ -146,7 +142,7 @@ export default function FolderPage() {
             </div>
 
             {/* Track 7 */}
-            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-[#FCFBF9] border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">7. Stop Overthinking</h2>
               <audio controls className="w-full h-10 rounded-md outline-none" ref={(el) => { audioRefs.current[6] = el; }} onPlay={() => handlePlay(6)}>
                 <source src="/songs/stop-overthinking.mp3" type="audio/mpeg" />
@@ -154,7 +150,7 @@ export default function FolderPage() {
             </div>
 
             {/* Track 8 */}
-            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-[#FCFBF9] border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">8. Today feels heavy</h2>
               <audio controls className="w-full h-10 rounded-md outline-none" ref={(el) => { audioRefs.current[7] = el; }} onPlay={() => handlePlay(7)}>
                 <source src="/songs/today-feels-heavy.mp3" type="audio/mpeg" />
@@ -162,7 +158,7 @@ export default function FolderPage() {
             </div>
 
             {/* Track 9 */}
-            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-[#FCFBF9] border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">9. You Deserve Better</h2>
               <audio controls className="w-full h-10 rounded-md outline-none" ref={(el) => { audioRefs.current[8] = el; }} onPlay={() => handlePlay(8)}>
                 <source src="/songs/you-deserve-better.mp3" type="audio/mpeg" />
@@ -170,7 +166,7 @@ export default function FolderPage() {
             </div>
 
             {/* Track 10 */}
-            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-white/50 border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
+            <div className="snap-center shrink-0 w-full sm:w-[95%] bg-[#FCFBF9] border border-[#F2EDE4] rounded-2xl p-6 shadow-sm flex flex-col justify-center">
               <h2 className="text-[#1C1C1C] text-sm font-semibold tracking-wide mb-4">10. You&apos;re Rebuilding</h2>
               <audio controls className="w-full h-10 rounded-md outline-none" ref={(el) => { audioRefs.current[9] = el; }} onPlay={() => handlePlay(9)}>
                 <source src="/songs/youre-rebuilding.mp3" type="audio/mpeg" />
@@ -182,13 +178,20 @@ export default function FolderPage() {
           {/* Right Desktop Arrow */}
           <button 
             onClick={() => scroll("right")} 
-            className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 backdrop-blur-md border border-[#F2EDE4] rounded-full items-center justify-center text-[#AF8C4F] shadow-lg z-10 hover:bg-white transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
+            className="hidden md:flex absolute -right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 border border-[#F2EDE4] rounded-full items-center justify-center text-[#AF8C4F] shadow-lg z-10 hover:bg-[#FCFBF9] transition-all opacity-0 group-hover:opacity-100 disabled:opacity-0"
             aria-label="Scroll Right"
           >
             →
           </button>
 
         </div>
+      </div>
+
+      {/* BOTTOM: Elegant Footer Quote */}
+      <div className="w-full text-center pb-2 mt-auto">
+        <p className="text-[9px] uppercase tracking-[0.2em] text-[#AF8C4F] opacity-80 font-medium">
+          Take a deep breath. You are exactly where you need to be.
+        </p>
       </div>
       
     </div>
