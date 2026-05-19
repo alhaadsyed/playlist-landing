@@ -25,9 +25,9 @@ export default function FolderPage() {
   };
 
   return (
-    // Reverted to pure bg-white and justify-center to perfectly match your home page
+    // FIX 1: Matched the exact padding from the home page (px-6 pb-6 pt-2) to slide the logo up
     <div
-      className="flex flex-col items-center justify-center min-h-screen p-6 font-sans bg-white bg-[length:100%_auto] md:bg-cover bg-top md:bg-center bg-no-repeat overflow-hidden"
+      className="flex flex-col items-center justify-start md:justify-center min-h-screen px-6 pb-6 pt-2 font-sans bg-white bg-[length:100%_auto] md:bg-cover bg-top md:bg-center bg-no-repeat overflow-hidden"
       style={{ backgroundImage: "url('/images/back.jpeg')" }}
     >
       {/* Hide Webkit Scrollbar globally for this page */}
@@ -38,14 +38,15 @@ export default function FolderPage() {
       `}</style>
 
       {/* TOP: BRAND LOGO */}
+      {/* FIX 2: Shrunk the logo to max-w-[220px] on mobile so it fits perfectly inside the golden wreath */}
       <img 
         src="/images/logo.jpeg" 
         alt="The Breakup Re//Set" 
-        className="w-full max-w-[280px] sm:max-w-sm mb-10 object-contain mix-blend-multiply"
+        className="w-full max-w-[220px] md:max-w-[280px] mb-10 object-contain mix-blend-multiply shrink-0"
       />
 
-      {/* MIDDLE: The Translucent Playlist Card (Reverted to bg-white/70 exactly like home page) */}
-      <div className="bg-white/70 backdrop-blur-2xl border border-[#F2EDE4] shadow-[0_20px_50px_-12px_rgba(197,160,89,0.1)] rounded-2xl p-8 w-full max-w-xl flex flex-col items-center relative overflow-hidden">
+      {/* MIDDLE: The Translucent Playlist Card */}
+      <div className="bg-white/70 backdrop-blur-2xl border border-[#F2EDE4] shadow-[0_20px_50px_-12px_rgba(197,160,89,0.1)] rounded-2xl p-8 w-full max-w-xl flex flex-col items-center relative overflow-hidden mb-10">
         
         {/* Faint decorative top border accent line */}
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/3 h-[2px] bg-gradient-to-r from-transparent via-[#C5A059] to-transparent opacity-50"></div>
@@ -53,7 +54,7 @@ export default function FolderPage() {
         {/* HEADER SECTION */}
         <div className="flex flex-col items-center w-full shrink-0 pb-2 mb-4">
           
-          <div className="w-full flex justify-start mb-4">
+          <div className="w-full flex justify-start mb-2">
             <Link href="/" className="text-[#AF8C4F] text-[10px] tracking-widest uppercase hover:opacity-70 transition flex items-center">
               ← Back
             </Link>
@@ -65,7 +66,7 @@ export default function FolderPage() {
           </div>
 
           <h1 className="text-lg uppercase tracking-[0.25em] text-[#AF8C4F] font-medium text-center mb-6">
-            The Rebirth Kit
+            The Playlist
           </h1>
           
           {/* Subtle divider line */}
